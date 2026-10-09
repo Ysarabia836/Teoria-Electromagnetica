@@ -157,8 +157,8 @@ header h1{font-size:clamp(24px,4vw,36px);font-weight:650;letter-spacing:.01em}
 <footer>Ingeniería Electrónica · MTRA. Yasmin Sarabia Sánchez</footer>
 <script>
 /* Consulta las actividades HTML de cada carpeta Tema 1, Tema 2, etc. Configura REPO_OWNER y REPO_NAME antes de publicar. */
-const REPO_OWNER = "Ysarabia836"; // Escribe aquí el usuario de GitHub de la docente.
-const REPO_NAME = "Teoria-Electromagnetica"; // Debe coincidir con el repositorio.
+const REPO_OWNER = "Ysarabia836";
+const REPO_NAME = "Teoria-Electromagnetica";
 const REPO_BRANCH = "main";
 const PAGES_BASE = `https://${REPO_OWNER.toLowerCase()}.github.io/${REPO_NAME}/`;
 
@@ -180,7 +180,7 @@ async function getFilesRecursive(path){
   const files = [];
 
   for(const item of items){
-    if(item.type === "file" && /\.html?$/i.test(item.name) && item.name.toLowerCase() !== "index.html"){
+    if(item.type === "file" && /\.html?$/i.test(item.name)){
       files.push(item.path);
     }else if(item.type === "dir"){
       const nested = await getFilesRecursive(item.path);
